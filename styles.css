@@ -1,4 +1,3 @@
-/* Algemene instellingen */
 html, body {
     font-family: Arial, sans-serif;
     background-color: #3d3d3d;
@@ -13,10 +12,9 @@ html, body {
     font-size: 16px;
 }
 
-/* Logo en titel */
 .logo {
-    width: 15vw; /* Zorgt dat het logo schaalbaar blijft */
-    max-width: 250px; /* Voorkomt dat het te groot wordt */
+    width: 15vw;
+    max-width: 250px;
     height: auto;
 }
 
@@ -26,14 +24,13 @@ html, body {
     justify-content: left;
     position: absolute;
     left: 2vw;
-    top: 5vh;
+    top: 6vh;
     transform: translateY(-50%);
 }
 
-/* Header en Navigatie */
 header {
     background-color: #575757;
-    padding: 2rem;
+    padding: 0.8rem;
     text-align: center;
 }
 
@@ -65,7 +62,6 @@ nav ul li a:hover {
     color: #3d3d3d;
 }
 
-/* Hero-sectie */
 .hero {
     text-align: center;
     display: flex;
@@ -84,7 +80,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .hero h2, .hero p {
@@ -94,9 +90,8 @@ nav ul li a:hover {
     color: #d5c28f;
 }
 
-/* Specialiteiten */
 .specialiteiten {
-    padding: 4vh;
+    padding: 2vh;
     text-align: center;
     background-color: #3d3d3d;
     color: #d5c28f;
@@ -123,7 +118,6 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Menu */
 .menu {
     background-color: #3d3d3d;
     color: #d5c28f;
@@ -160,7 +154,6 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-/* Tabbladen */
 .tabs {
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +186,6 @@ nav ul li a:hover {
     color: #3d3d3d;
 }
 
-/* Contactinformatie */
 .contact-info {
     background-color: #3d3d3d;
     padding: 4vh;
@@ -229,7 +221,6 @@ nav ul li a:hover {
     color: #C7AE6A;
 }
 
-/* Footer */
 footer {
     background-color: #575757;
     color: #b99a45;
