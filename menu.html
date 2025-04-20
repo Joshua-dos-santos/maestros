@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Maestro Caribbean Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <img src="images/logo.png" alt="Maestro Caribbean Kitchen Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu">
+        <h1>Onze Menukaart</h1>
+
+        <!-- Tab Navigatie -->
+        <div class="tabs">
+            <button class="tab-link" onclick="openTab(event, 'snacks')">Snacks</button>
+            <button class="tab-link" onclick="openTab(event, 'hoofdgerechten')">Hoofdgerechten</button>
+            <button class="tab-link" onclick="openTab(event, 'specialiteiten')">Antilliaanse Specialiteiten</button>
+            <button class="tab-link" onclick="openTab(event, 'dranken')">Dranken</button>
+            <button class="tab-link" onclick="openTab(event, 'snackbox')">Snack Boxen</button>
+            <button class="tab-link" onclick="openTab(event, 'hapastaps')">Hapas Taps Boxen</button>
+            <button class="tab-link" onclick="openTab(event, 'cateringmenu')">Cateringmenu’s</button>
+            <button class="tab-link" onclick="openTab(event, 'livecooking')">Live Cooking</button>
+        </div>
+
+        <!-- Tabbladen Inhoud -->
+        <div id="snacks" class="tab-content">
+            <h2>Snacks per stuk</h2>
+            <ul>
+                <li>Kaasballen - €1,20</li>
+                <li>Bitterballen - €1,20</li>
+                <li>Loempia's (vega) - €1,40</li>
+                <li>Picabal - €1,10</li>
+                <li>Pasteitjes (kip/vlees/kaas) - €1,50</li>
+            </ul>
+        </div>
+
+        <div id="hoofdgerechten" class="tab-content">
+            <h2>Hoofdgerechten</h2>
+            <ul>
+                <li>Bami (hete kip/oven kip) - €20</li>
+                <li>Nasi (oven kip) - €20</li>
+                <li>Roti (1 vel) - €20</li>
+                <li>Veganistische roti - €15</li>
+            </ul>
+        </div>
+
+        <div id="specialiteiten" class="tab-content">
+            <h2>Antilliaanse Specialiteiten</h2>
+            <ul>
+                <li>Kabritu Stobá - €17,50</li>
+                <li>Galina Stobá - €15,00</li>
+                <li>Funchi met Karni Stobá - €15,00</li>
+            </ul>
+        </div>
+
+        <div id="dranken" class="tab-content">
+            <h2>Dranken</h2>
+            <ul>
+                <li>Ponche Crema - €35</li>
+            </ul>
+        </div>
+
+        <div id="snackbox" class="tab-content">
+            <h2>Snack Boxen</h2>
+            <ul>
+                <li>Small (€25) – 5 Kaasballen, 5 Bitterballen, 5 Loempia’s, 5 Pastechi</li>
+                <li>Medium (€50) – 10 Kaasballen, 10 Bitterballen, 10 Loempia’s, 10 Pastechi, 5 Picabals</li>
+                <li>Large (€75) – 15 Kaasballen, 15 Bitterballen, 15 Loempia’s, 15 Pastechi, 10 Picabals, 5 Kip saté</li>
+            </ul>
+        </div>
+
+        <div id="hapastaps" class="tab-content">
+            <h2>Hapas Taps Boxen</h2>
+            <ul>
+                <li>Small (€30) – 4 Kaasballen, 4 Bitterballen, 6 Mini loempia’s, 4 Picabal</li>
+                <li>Medium (€55) – 8 Kaasballen, 8 Bitterballen, 10 Mini loempia’s, 8 Picabal, 8 Pastechi, 6 Mini empanada’s</li>
+                <li>Large (€80) – 12 Kaasballen, 12 Bitterballen, 15 Mini loempia’s, 12 Picabal, 10 Pastechi, 8 Mini empanada’s, 8 Kip saté, 6 Antilliaanse kroketten</li>
+            </ul>
+        </div>
+
+        <div id="cateringmenu" class="tab-content">
+            <h2>Cateringmenu's</h2>
+            <ul>
+                <li>Klassiek (€30 p.p.) – Kaasballen, Pastechi kip/vlees/kaas, Nasi/Bami met ovenkip of roti</li>
+                <li>Antilliaans Genot (€35 p.p.) – Pastechi kaas, Picabal, Kabritu Stobá met rijst/funchi, Gebakken banaan</li>
+                <li>Veganistisch Feest (€20 p.p.) – Loempia’s, Veganistische roti (ei, aardappelen, kousenband)</li>
+            </ul>
+        </div>
+
+        <div id="livecooking" class="tab-content">
+            <h2>Live Cooking</h2>
+            <p>Kosten: €80 per uur (menu in overleg, exclusief ingrediëntenkosten).</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Maestro Caribbean Kitchen. Alle rechten voorbehouden.</p>
+    </footer>   
+</body>
+</html>
+
+<script>
+    function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+document.getElementsByClassName("tab-link")[0].click(); // Open eerste tab standaard
+
+</script>
