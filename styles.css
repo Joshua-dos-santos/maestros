@@ -1,67 +1,77 @@
-body {
+/* Algemene instellingen */
+html, body {
     font-family: Arial, sans-serif;
     background-color: #3d3d3d;
     color: #d5c28f;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
 }
 
+/* Logo en titel */
 .logo {
-    width: 250px; /* Grotere grootte */
-    max-height: 600px; /* Houdt de aspect ratio correct */
+    width: 15vw; /* Zorgt dat het logo schaalbaar blijft */
+    max-width: 250px; /* Voorkomt dat het te groot wordt */
+    height: auto;
 }
 
 .title {
     display: flex;
-    align-items: center; /* Zorgt ervoor dat het logo verticaal gecentreerd blijft */
-    justify-content: left; /* Plaatst het logo aan de linkerzijde */
+    align-items: center;
+    justify-content: left;
     position: absolute;
-    left: 0; /* Zorgt ervoor dat het niet direct tegen de rand zit */
-    top: 50px;
-    transform: translateY(-50%); /* Centreert verticaal in de header */
+    left: 2vw;
+    top: 5vh;
+    transform: translateY(-50%);
 }
 
+/* Header en Navigatie */
 header {
     background-color: #575757;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
 }
 
 h1 {
+    font-size: 2.5rem;
     color: #C7AE6A;
 }
-
 
 nav ul {
     list-style-type: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
 }
 
 nav ul li a {
     color: #C7AE6A;
     text-decoration: none;
+    font-size: 1.2rem;
     font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-nav li:hover {
+nav ul li a:hover {
     background-color: #b99a45;
     color: #3d3d3d;
-    padding: 10px 15px;
-    border-radius: 5px;
 }
 
+/* Hero-sectie */
 .hero {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px;
+    padding: 5vh;
     height: 40vh;
     position: relative;
     background: url('images/hero.jpg') no-repeat center center/cover;
@@ -74,17 +84,19 @@ nav li:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero h2, .hero p {
     position: relative;
-    z-index: 1; /* Zorgt ervoor dat de tekst boven de overlay blijft */
-    color: #d5c28f; /* Zorgt ervoor dat de tekst goed leesbaar blijft */
+    z-index: 1;
+    font-size: 1.8rem;
+    color: #d5c28f;
 }
 
+/* Specialiteiten */
 .specialiteiten {
-    padding: 40px;
+    padding: 4vh;
     text-align: center;
     background-color: #3d3d3d;
     color: #d5c28f;
@@ -92,42 +104,44 @@ nav li:hover {
 }
 
 .specialiteiten-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
 .specialiteit {
     background-color: #575757;
     color: #C7AE6A;
-    padding: 15px 25px;
+    padding: 1rem 2rem;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
 }
 
+.specialiteit:hover {
+    transform: scale(1.05);
+}
+
+/* Menu */
 .menu {
     background-color: #3d3d3d;
     color: #d5c28f;
-    padding: 30px;
+    padding: 3vh;
     text-align: center;
 }
 
 .menu h1 {
+    font-size: 2.5rem;
     color: #C7AE6A;
-    font-size: 28px;
-    margin-bottom: 20px;
 }
 
 .menu h2 {
+    font-size: 1.8rem;
     color: #b99a45;
-    font-size: 22px;
     border-bottom: 2px solid #C7AE6A;
-    padding-bottom: 10px;
-    margin-top: 30px;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .menu ul {
@@ -136,74 +150,76 @@ nav li:hover {
 }
 
 .menu ul li {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 1.2rem;
+    padding: 1rem;
     background-color: #575757;
-    margin: 5px auto;
+    margin: 0.5rem auto;
     display: block;
     width: 80%;
-    max-width: 600px; /* Voorkomt dat het te breed wordt */
+    max-width: 600px;
     border-radius: 10px;
 }
 
+/* Tabbladen */
 .tabs {
     display: flex;
-    flex-wrap: wrap; /* Voorkomt dat tabbladen te breed worden */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
 }
 
-
 .tab-link {
-    background-color: #575757; /* Donkere achtergrond voor een luxe uitstraling */
-    color: #d5c28f; /* Gouden kleur voor tekst */
-    font-size: 18px;
+    background-color: #575757;
+    color: #d5c28f;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
-    padding: 12px 20px;
+    padding: 1rem 2rem;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .tab-link:hover {
-    background-color: #b99a45; /* Mooie gouden tint bij hover */
+    background-color: #b99a45;
     transform: scale(1.05);
 }
 
 .tab-link.active {
-    background-color: #C7AE6A; /* Actieve tab krijgt een iets lichtere gouden tint */
-    color: #3d3d3d; /* Donkere tekst */
+    background-color: #C7AE6A;
+    color: #3d3d3d;
 }
 
-html, body {
-    overflow-x: hidden; /* Voorkomt horizontale scrolling */
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
+/* Contactinformatie */
 .contact-info {
     background-color: #3d3d3d;
-    padding: 40px;
+    padding: 4vh;
     text-align: center;
     border-radius: 10px;
 }
 
 .contact-info i {
+    font-size: 1.5rem;
     color: #C7AE6A;
-    font-size: 20px;
-    margin-right: 10px;
+    margin-right: 1rem;
+}
+
+.contact-info p a {
+    color: #b99a45;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.contact-info p a:hover {
+    text-decoration: underline;
 }
 
 .social-link i {
-    font-size: 30px;
+    font-size: 2rem;
     color: #b99a45;
     transition: transform 0.3s ease-in-out;
 }
@@ -213,46 +229,13 @@ html, body {
     color: #C7AE6A;
 }
 
-.contact-info h2 {
-    color: #C7AE6A;
-    font-size: 28px;
-}
-
-.contact-info p a {
-    color: #b99a45;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info p a:hover {
-    text-decoration: underline;
-}
-
-.social-media {
-    margin-top: 20px;
-}
-
-.social-media h3 {
-    color: #b99a45;
-}
-
-.social-link img {
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-link img:hover {
-    transform: scale(1.2);
-}
-
+/* Footer */
 footer {
     background-color: #575757;
     color: #b99a45;
     text-align: center;
-    padding: 20px;
-    font-size: 16px;
+    padding: 2vh;
+    font-size: 1rem;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -260,7 +243,7 @@ footer {
 }
 
 footer p {
-    margin: 10px 0;
+    margin: 1rem 0;
 }
 
 footer a {
@@ -274,23 +257,6 @@ footer a:hover {
 }
 
 footer i {
-    margin-right: 10px;
-    font-size: 18px;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
 }
-
-.social-media {
-    margin-top: 10px;
-}
-
-.social-link i {
-    font-size: 24px;
-    color: #b99a45;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-link i:hover {
-    transform: scale(1.2);
-    color: #C7AE6A;
-}
-
-
