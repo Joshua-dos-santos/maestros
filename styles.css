@@ -24,7 +24,7 @@ html, body {
     justify-content: left;
     position: absolute;
     left: 2vw;
-    top: 6vh;
+    top: 2.5rem;
     transform: translateY(-50%);
 }
 
