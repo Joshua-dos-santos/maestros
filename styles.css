@@ -229,6 +229,16 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #b99a45
+}
+
 .social-link i {
     font-size: 1.8rem;
     color: #b99a45;
