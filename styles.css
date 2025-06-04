@@ -1,3 +1,7 @@
+/* ============================================= */
+/* ALGEMENE OPMAAK (zelfde voor alle pagina’s)   */
+/* ============================================= */
+
 html, body {
     font-family: Arial, sans-serif;
     background-color: #3d3d3d;
@@ -34,12 +38,7 @@ header {
     text-align: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #C7AE6A;
-}
-
-nav ul {
+header nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -47,7 +46,7 @@ nav ul {
     gap: 2vw;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #C7AE6A;
     text-decoration: none;
     font-size: 1.2rem;
@@ -57,10 +56,14 @@ nav ul li a {
     transition: background-color 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     background-color: #b99a45;
     color: #3d3d3d;
 }
+
+/* ============================================= */
+/* HERO-SECTIE (index.html)                      */
+/* ============================================= */
 
 .hero {
     text-align: center;
@@ -90,6 +93,10 @@ nav ul li a:hover {
     color: #d5c28f;
 }
 
+/* ============================================= */
+/* SPECIALITEITEN-SECTIE (index.html)             */
+/* ============================================= */
+
 .specialiteiten {
     padding: 2vh;
     text-align: center;
@@ -112,22 +119,30 @@ nav ul li a:hover {
     font-size: 1.2rem;
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .specialiteit:hover {
     transform: scale(1.05);
 }
 
+/* ============================================= */
+/* MENU-SECTIE (menu.html)                       */
+/* ============================================= */
+
 .menu {
     background-color: #3d3d3d;
     color: #d5c28f;
-    padding: 6vh;
+    padding: 6vh 2vh 2vh; /* top-bodem padding, eventueel extra zij-padding */
     text-align: center;
 }
 
 .menu h1 {
     font-size: 2.5rem;
     color: #C7AE6A;
+    margin-bottom: 1rem;
 }
 
 .menu h2 {
@@ -136,61 +151,71 @@ nav ul li a:hover {
     border-bottom: 2px solid #C7AE6A;
     padding-bottom: 1rem;
     margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
-.menu ul {
-    list-style-type: none;
-    padding: 0;
+/* TAB-BUTTONS - scrollbare balk */
+.tabs {
+    display: flex;
+    flex-wrap: nowrap;   /* géén wrap: alle knoppen op één rij */
+    justify-content: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    overflow-x: auto;    /* horizontale scrollbar mogelijk */
+    padding: 0.5rem 1rem;
+    margin: 0 auto 2rem;
+    background-color: #3d3d3d;
+    border-radius: 8px;
 }
 
-.menu ul li {
-    font-size: 1.2rem;
-    padding: 1rem;
-    background-color: #575757;
-    margin: 0.5rem auto;
-    display: block;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
+.scrollable-tabs::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollable-tabs::-webkit-scrollbar-track {
+    background: #575757;
+    border-radius: 3px;
+}
+
+.scrollable-tabs::-webkit-scrollbar-thumb {
+    background-color: #b99a45;
+    border-radius: 3px;
 }
 
 .tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    max-width: 90%;
-    margin: 0 auto;
+    scrollbar-width: thin;
+    scrollbar-color: #b99a45 #575757;
 }
 
-.tab-link {
+.tabs .tab-link {
+    flex: 0 0 auto;           /* buttons krimpen niet, nemen alleen benodigde breedte in */
     background-color: #575757;
     color: #d5c28f;
     font-size: 1.2rem;
     font-weight: bold;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
 }
 
-.tab-link:hover {
+.tabs .tab-link:hover {
     background-color: #b99a45;
     transform: scale(1.05);
 }
 
-.tab-link.active {
+.tabs .tab-link.active {
     background-color: #C7AE6A;
     color: #3d3d3d;
 }
 
-/* ================================================================= */
-/*  Menu‐items als “cards” met prijs rechts uitgelijnd                */
-/* ================================================================= */
+/* TAB-CONTENT - kaarten met naam + prijs */
+.tab-content {
+    display: none; /* alle tab-content beginnen verborgen */
+}
 
-/* 1) Container voor de lijst; grid zorgt voor responsieve kolommen */
 .tab-content ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -201,34 +226,30 @@ nav ul li a:hover {
     max-width: 1000px;
 }
 
-/* 2) Elk menu‐item zelf (“card”) */
 .tab-content ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #444;          /* donkerder dan #575757 */
-    color: #f0e6c5;                   /* zachte goudkleur */
+    background-color: #444;
+    color: #f0e6c5;
     padding: 1rem 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
-    min-height: 80px;                 /* uniforme hoogte */
+    min-height: 80px;
 }
 
-/* 3) Hover‐effect: kaart licht op */
 .tab-content ul li:hover {
-    background-color: #555;           /* iets lichter dan #444 */
+    background-color: #555;
     transform: translateY(-3px);
 }
 
-/* 4) Linkerkant (naam + omschrijving) */
 .tab-content ul li .dish-text {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-/* 4a) Naam is iets groter / vet */
 .tab-content ul li .dish-name {
     font-size: 1.15rem;
     font-weight: 600;
@@ -236,22 +257,20 @@ nav ul li a:hover {
     margin-bottom: 0.2rem;
 }
 
-/* 4b) Omschrijving in kleinere, lichtere tekst */
 .tab-content ul li .dish-desc {
     font-size: 0.95rem;
     font-weight: 400;
     color: #d5c28f;
 }
 
-/* 5) Prijs altijd rechts uitgelijnd, iets groter */
 .tab-content ul li .dish-price {
     font-size: 1.1rem;
     font-weight: 600;
     color: #f0e6c5;
-    white-space: nowrap;   /* voorkomt regelbreuk */
+    white-space: nowrap;
 }
 
-/* Responsive: op mobiel stapelt kaartje de teksten */
+/* Responsive: op smalle schermen zet prijs onder de naam */
 @media screen and (max-width: 600px) {
     .tab-content ul li {
         flex-direction: column;
@@ -263,50 +282,44 @@ nav ul li a:hover {
     }
 }
 
+/* ============================================= */
+/* CONTACT-SECTIE (contact.html)                 */
+/* ============================================= */
+
 .contact-info {
     background-color: #3d3d3d;
-    padding: 4vh;
+    padding: 4vh 2vh;
     text-align: center;
     border-radius: 10px;
+    flex: 1;  /* zorgt dat contact-info indien nodig ruimte kan innemen */
 }
 
-.contact-info i {
-    font-size: 1.5rem;
+.contact-info h2 {
+    font-size: 2rem;
     color: #C7AE6A;
-    margin-right: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.contact-info p a {
-    color: #b99a45;
-    text-decoration: none;
-    font-size: 1.0rem;
-    font-weight: bold;
+/* .contact-list stijlen zitten deels inline voor overzicht, maar je kunt dit in CSS verplaatsen */
+.contact-info .social-media h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
-.contact-info p a:hover {
-    text-decoration: underline;
-}
-
+/* BELANGRIJKE INFORMATIE */
 .info-list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 1rem auto;
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.5rem;
     color: #b99a45;
 }
 
-.social-link i {
-    font-size: 1.8rem;
-    color: #b99a45;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-link i:hover {
-    transform: scale(1.2);
-    color: #C7AE6A;
-}
+/* ============================================= */
+/* FOOTER (alle pagina’s)                        */
+/* ============================================= */
 
 footer {
     background-color: #575757;
