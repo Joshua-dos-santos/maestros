@@ -122,7 +122,7 @@ nav ul li a:hover {
     background-color: #3d3d3d;
     color: #d5c28f;
     padding: 6vh;
-    text-align: center;;
+    text-align: center;
 }
 
 .menu h1 {
@@ -186,23 +186,81 @@ nav ul li a:hover {
     color: #3d3d3d;
 }
 
+/* ================================================================= */
+/*  Menu‐items als “cards” met prijs rechts uitgelijnd                */
+/* ================================================================= */
+
+/* 1) Container voor de lijst; grid zorgt voor responsieve kolommen */
 .tab-content ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
-    list-style-type: none;
-    padding: 0;
+    padding: 2rem 0;
+    list-style: none;
     margin: 0 auto;
     max-width: 1000px;
 }
 
+/* 2) Elk menu‐item zelf (“card”) */
 .tab-content ul li {
-    background-color: #575757;
-    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;          /* donkerder dan #575757 */
+    color: #f0e6c5;                   /* zachte goudkleur */
+    padding: 1rem 1.5rem;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-height: 80px;                 /* uniforme hoogte */
+}
+
+/* 3) Hover‐effect: kaart licht op */
+.tab-content ul li:hover {
+    background-color: #555;           /* iets lichter dan #444 */
+    transform: translateY(-3px);
+}
+
+/* 4) Linkerkant (naam + omschrijving) */
+.tab-content ul li .dish-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* 4a) Naam is iets groter / vet */
+.tab-content ul li .dish-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f0e6c5;
+    margin-bottom: 0.2rem;
+}
+
+/* 4b) Omschrijving in kleinere, lichtere tekst */
+.tab-content ul li .dish-desc {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #d5c28f;
+}
+
+/* 5) Prijs altijd rechts uitgelijnd, iets groter */
+.tab-content ul li .dish-price {
     font-size: 1.1rem;
-    margin: 0;
+    font-weight: 600;
+    color: #f0e6c5;
+    white-space: nowrap;   /* voorkomt regelbreuk */
+}
+
+/* Responsive: op mobiel stapelt kaartje de teksten */
+@media screen and (max-width: 600px) {
+    .tab-content ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .tab-content ul li .dish-price {
+        align-self: flex-end;
+    }
 }
 
 .contact-info {
@@ -236,7 +294,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #b99a45
+    color: #b99a45;
 }
 
 .social-link i {
